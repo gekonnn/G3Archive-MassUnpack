@@ -23,7 +23,7 @@ namespace G3ArchiveMassUnpack
             ParsedOptions.Overwrite = true;
             Logger.Quiet = true;
 
-            DirectoryInfo directory = new DirectoryInfo(args[0]);
+            DirectoryInfo directory = new DirectoryInfo(args[0].TrimEnd('"').TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar));
             if (!directory.Exists)
             {
                 Console.WriteLine("Specified directory does not exist");
