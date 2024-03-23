@@ -12,7 +12,7 @@ Download the [latest release](https://github.com/gekonnn/G3Archive-MassUnpack/re
 ```
 G3Archive-MassUnpack [path-to-files] *[target-archive]
 ```
-<i>* - optional
+<i>* - optional</i>
 ### Example:
 ```
 G3Archive-MassUnpack "C:\Program Files (x86)\Steam\steamapps\common\Gothic 3\Data" _compiledImage
