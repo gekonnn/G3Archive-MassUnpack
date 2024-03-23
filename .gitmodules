@@ -1,0 +1,3 @@
+[submodule "G3Archive"]
+	path = G3Archive
+	url = https://github.com/gekonnn/G3Archive.git
