@@ -39,12 +39,19 @@ namespace G3ArchiveMassUnpack
                 {
                     continue;
                 }
+                try
+                {
+                    G3Pak_Archive Archive = new G3Pak_Archive();
+                    Archive.ReadArchive(file);
 
-                G3Pak_Archive Archive = new G3Pak_Archive();
-                Archive.ReadArchive(file);
-                
-                Console.WriteLine($"Extracting {file.Name}...");
-                Archive.Extract(Path.Combine(Directory.GetCurrentDirectory(), "Extracted", Path.GetFileNameWithoutExtension(file.Name))).Wait();
+                    Console.WriteLine($"Extracting {file.Name}...");
+                    Archive.Extract(Path.Combine(Directory.GetCurrentDirectory(), "Extracted", Path.GetFileNameWithoutExtension(file.Name))).Wait();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
             }
 
             Console.WriteLine("Extraction complete.");
